@@ -1,7 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getAI, getGenerativeModel, GoogleAIBackend } from "firebase/ai";
+// Note: Firebase AI Logic may not be available in all environments yet
+// import { getAI, getGenerativeModel, GoogleAIBackend } from "firebase/ai";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -23,10 +24,10 @@ if (typeof window !== 'undefined') {
   analytics = getAnalytics(app);
 }
 
-// Initialize the Gemini Developer API backend service
-const ai = getAI(app, { backend: new GoogleAIBackend() });
+// Initialize the Gemini Developer API backend service (commented out for now)
+// const ai = getAI(app, { backend: new GoogleAIBackend() });
 
-// Create a GenerativeModel instance
-const model = getGenerativeModel(ai, { model: "gemini-2.5-flash" });
+// Create a GenerativeModel instance (commented out for now)
+// const model = getGenerativeModel(ai, { model: "gemini-2.5-flash" });
 
-export { app, analytics, ai, model };
+export { app, analytics };
